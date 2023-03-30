@@ -10,7 +10,6 @@ SuiteCRM is an open-source Customer Relationship Management (CRM) software solut
 ### Table of Contents
 
 #### Prerequisites
-
 Step 1. Log in via SSH and update the system
 Step 2: Install Apache Webserver
 Step 3: Install PHP and extensions
