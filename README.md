@@ -126,3 +126,6 @@ Save and close the file then activate the SuiteCRM virtual host with the followi
 
     a2ensite suitecrm.conf
 Restart the Apache service and you are ready:
+systemctl restart apache2
+Step 8: Install SuiteCRM on Ubuntu 20.04
+To run the web installer go to http://your-domain.com/#/install and you will see the license terms:
