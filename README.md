@@ -48,12 +48,12 @@ systemctl enable apache2
 systemctl start apache2
 To confirm that you have properly installed Apache2, you can open your preferred web browser and type your server IP address and you should be able to view the Apache2 Ubuntu Default Page.
 
-Step 3: Install PHP and extensions
+# Step 3: Install PHP and extensions
 To install PHP and the required PHP extensions, run the following command:
 
 apt install php php-cli php-common php-curl php-mbstring php-gd php-mysql php-soap php-xml php-imap php-intl php-opcache php-json php-zip
 
-Step 4: Install MariaDB
+# Step 4: Install MariaDB
 MariaDB is available in the Ubuntu 20.04 default OS repository. You can install it by running the following command:
 
 apt install mariadb-server
