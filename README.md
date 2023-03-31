@@ -102,7 +102,7 @@ unzip SuiteCRM-8.0.3.zip -d /var/www/html/suitecrm
 Then run the following command to set the correct permissions:
 
 chown -R www-data:www-data /var/www/html/suitecrm/
-Step 7: Create an Apache configuration file
+# Step 7: Create an Apache configuration file
 To create a new configuration file for the Drupal website, we can create a new Apache configuration file:
 
 nano /etc/apache2/sites-available/suitecrm.conf
