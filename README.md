@@ -56,10 +56,10 @@ To install PHP and the required PHP extensions, run the following command:
 # Step 4: Install MariaDB
 MariaDB is available in the Ubuntu 20.04 default OS repository. You can install it by running the following command:
 
-apt install mariadb-server
+    $ apt install mariadb-server
 By default, the MariaDB service will start automatically after installing it in your system. You can verify it with the following command:
 
-systemctl status mariadb
+    systemctl status mariadb
 You should get the following output:
 
 ● mariadb.service - MariaDB 10.3.32 database server
@@ -75,54 +75,54 @@ CGroup: /system.slice/mariadb.service
 └─968 /usr/sbin/mysqld
 Once the installation is complete, issue the following command to secure your installation. This is optional, but strongly recommended:
 
-mariadb_secure_installation
+    mariadb_secure_installation
 This script will set the MariaDB root password, disable remote root login and remove anonymous users. We suggest answering every question with the character ‘Y’ for yes.
 
 # Step 5: Create a Database for SuiteCRM
 First, Log in to your MariaDB console with the following command:
 
-mysql -u root -p
+    mysql -u root -p
 Provide your MariaDB root password when prompt then create a database and user using the following command:
 
-MariaDB [(none)]> CREATE DATABASE suitecrmdb;
-MariaDB [(none)]> GRANT ALL PRIVILEGES ON suitecrmdb.* TO 'suitecrm'@'localhost' IDENTIFIED BY 'strong-password';
+    MariaDB [(none)]> CREATE DATABASE suitecrmdb;
+    MariaDB [(none)]> GRANT ALL PRIVILEGES ON suitecrmdb.* TO 'suitecrm'@'localhost' IDENTIFIED BY 'strong-password';
 Next, flush the privileges and exit from the MariaDB console with the following command:
 
-MariaDB [(none)]> FLUSH PRIVILEGES;
-MariaDB [(none)]> EXIT;
+    MariaDB [(none)]> FLUSH PRIVILEGES;
+    MariaDB [(none)]> EXIT;
 
 
 # Step 6: Download SuiteCRM on Ubuntu 20.04
 Download the latest stable version by executing the following command on your server.
 
-wget https://suitecrm.com/files/147/SuiteCRM-8.0/608/SuiteCRM-8.0.3.zip
+    wget https://suitecrm.com/files/147/SuiteCRM-8.0/608/SuiteCRM-8.0.3.zip
 Then create a suitecrm directory unzip it to the  /var/www/html/suitecrm directory.
 
 unzip SuiteCRM-8.0.3.zip -d /var/www/html/suitecrm
 Then run the following command to set the correct permissions:
 
-chown -R www-data:www-data /var/www/html/suitecrm/
+    chown -R www-data:www-data /var/www/html/suitecrm/
 # Step 7: Create an Apache configuration file
 To create a new configuration file for the Drupal website, we can create a new Apache configuration file:
 
-nano /etc/apache2/sites-available/suitecrm.conf
+    nano /etc/apache2/sites-available/suitecrm.conf
 A basic Apache configuration file looks similar to this:
 
-<VirtualHost *:80>
-   ServerAdmin webmaster@your-domain.com
-   ServerName your-domain.com
-   DocumentRoot /var/www/html/suitecrm/public
-   <Directory /var/www/html/suitecrm/public>
-       AllowOverride All
-       Order Allow,Deny
-       Allow from All
-   </Directory>
-   ErrorLog ${APACHE_LOG_DIR}/suitecrm_error.log
-   CustomLog ${APACHE_LOG_DIR}/suitecrm_access.log combined
-</VirtualHost>
+    <VirtualHost *:80>
+      ServerAdmin webmaster@your-domain.com
+      ServerName your-domain.com
+      DocumentRoot /var/www/html/suitecrm/public
+      <Directory /var/www/html/suitecrm/public>
+          AllowOverride All
+          Order Allow,Deny
+          Allow from All
+     </Directory>
+     ErrorLog ${APACHE_LOG_DIR}/suitecrm_error.log
+     CustomLog ${APACHE_LOG_DIR}/suitecrm_access.log combined
+    </VirtualHost>
 Don’t forget to change the domain name next to ServerAdmin and ServerName (your-domain.com) in order to make it work with your unique registered domain name.
 
 Save and close the file then activate the SuiteCRM virtual host with the following command:
 
-a2ensite suitecrm.conf
+    a2ensite suitecrm.conf
 Restart the Apache service and you are ready:
