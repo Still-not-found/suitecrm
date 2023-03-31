@@ -134,4 +134,8 @@ You have to accept the license by checking the I ACCEPT checkbox.
 
 The next step is to add the base system configuration:
 
+After you have set correct values for all the configurations you can click on Proceed.
+
+Once the install process finishes you will be re-directed to the login page.
+
 
