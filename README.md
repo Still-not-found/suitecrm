@@ -47,3 +47,33 @@ systemctl enable apache2
 systemctl start apache2
 To confirm that you have properly installed Apache2, you can open your preferred web browser and type your server IP address and you should be able to view the Apache2 Ubuntu Default Page.
 
+Step 3: Install PHP and extensions
+To install PHP and the required PHP extensions, run the following command:
+
+apt install php php-cli php-common php-curl php-mbstring php-gd php-mysql php-soap php-xml php-imap php-intl php-opcache php-json php-zip
+
+Step 4: Install MariaDB
+MariaDB is available in the Ubuntu 20.04 default OS repository. You can install it by running the following command:
+
+apt install mariadb-server
+By default, the MariaDB service will start automatically after installing it in your system. You can verify it with the following command:
+
+systemctl status mariadb
+You should get the following output:
+
+● mariadb.service - MariaDB 10.3.32 database server
+Loaded: loaded (/lib/systemd/system/mariadb.service; enabled; vendor preset: enabled)
+Active: active (running)
+Docs: man:mysqld(8)
+https://mariadb.com/kb/en/library/systemd/
+Main PID: 968 (mysqld)
+Status: "Taking your SQL requests now..."
+Tasks: 30 (limit: 2240)
+Memory: 114.8M
+CGroup: /system.slice/mariadb.service
+└─968 /usr/sbin/mysqld
+Once the installation is complete, issue the following command to secure your installation. This is optional, but strongly recommended:
+
+mariadb_secure_installation
+This script will set the MariaDB root password, disable remote root login and remove anonymous users. We suggest answering every question with the character ‘Y’ for yes.
+
