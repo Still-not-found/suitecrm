@@ -92,7 +92,7 @@ MariaDB [(none)]> FLUSH PRIVILEGES;
 MariaDB [(none)]> EXIT;
 
 
-Step 6: Download SuiteCRM on Ubuntu 20.04
+# Step 6: Download SuiteCRM on Ubuntu 20.04
 Download the latest stable version by executing the following command on your server.
 
 wget https://suitecrm.com/files/147/SuiteCRM-8.0/608/SuiteCRM-8.0.3.zip
