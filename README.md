@@ -77,3 +77,15 @@ Once the installation is complete, issue the following command to secure your in
 mariadb_secure_installation
 This script will set the MariaDB root password, disable remote root login and remove anonymous users. We suggest answering every question with the character ‘Y’ for yes.
 
+Step 5: Create a Database for SuiteCRM
+First, Log in to your MariaDB console with the following command:
+
+mysql -u root -p
+Provide your MariaDB root password when prompt then create a database and user using the following command:
+
+MariaDB [(none)]> CREATE DATABASE suitecrmdb;
+MariaDB [(none)]> GRANT ALL PRIVILEGES ON suitecrmdb.* TO 'suitecrm'@'localhost' IDENTIFIED BY 'strong-password';
+Next, flush the privileges and exit from the MariaDB console with the following command:
+
+MariaDB [(none)]> FLUSH PRIVILEGES;
+MariaDB [(none)]> EXIT;
