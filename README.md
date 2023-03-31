@@ -138,4 +138,4 @@ After you have set correct values for all the configurations you can click on Pr
 
 Once the install process finishes you will be re-directed to the login page.
 
-
+That is it. The SuiteCRM installation is now complete. Of course, you don’t have to do any of this if you use one of our SuiteCRM Hosting services, in which case you can simply ask our expert Linux admins to install SuiteCRM for you. They are available 24×7 and will take care of your request immediately.
