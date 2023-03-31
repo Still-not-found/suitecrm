@@ -129,3 +129,9 @@ Restart the Apache service and you are ready:
 systemctl restart apache2
 Step 8: Install SuiteCRM on Ubuntu 20.04
 To run the web installer go to http://your-domain.com/#/install and you will see the license terms:
+
+You have to accept the license by checking the I ACCEPT checkbox.
+
+The next step is to add the base system configuration:
+
+
