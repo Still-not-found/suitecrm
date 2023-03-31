@@ -89,3 +89,39 @@ Next, flush the privileges and exit from the MariaDB console with the following 
 
 MariaDB [(none)]> FLUSH PRIVILEGES;
 MariaDB [(none)]> EXIT;
+
+
+Step 6: Download SuiteCRM on Ubuntu 20.04
+Download the latest stable version by executing the following command on your server.
+
+wget https://suitecrm.com/files/147/SuiteCRM-8.0/608/SuiteCRM-8.0.3.zip
+Then create a suitecrm directory unzip it to the  /var/www/html/suitecrm directory.
+
+unzip SuiteCRM-8.0.3.zip -d /var/www/html/suitecrm
+Then run the following command to set the correct permissions:
+
+chown -R www-data:www-data /var/www/html/suitecrm/
+Step 7: Create an Apache configuration file
+To create a new configuration file for the Drupal website, we can create a new Apache configuration file:
+
+nano /etc/apache2/sites-available/suitecrm.conf
+A basic Apache configuration file looks similar to this:
+
+<VirtualHost *:80>
+   ServerAdmin webmaster@your-domain.com
+   ServerName your-domain.com
+   DocumentRoot /var/www/html/suitecrm/public
+   <Directory /var/www/html/suitecrm/public>
+       AllowOverride All
+       Order Allow,Deny
+       Allow from All
+   </Directory>
+   ErrorLog ${APACHE_LOG_DIR}/suitecrm_error.log
+   CustomLog ${APACHE_LOG_DIR}/suitecrm_access.log combined
+</VirtualHost>
+Don’t forget to change the domain name next to ServerAdmin and ServerName (your-domain.com) in order to make it work with your unique registered domain name.
+
+Save and close the file then activate the SuiteCRM virtual host with the following command:
+
+a2ensite suitecrm.conf
+Restart the Apache service and you are ready:
