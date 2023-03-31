@@ -18,7 +18,8 @@ SuiteCRM is an open-source Customer Relationship Management (CRM) software solut
 * Step 6: Download SuiteCRM on Ubuntu 20.04
 * Step 7: Create an Apache configuration file
 * Step 8: Install SuiteCRM on Ubuntu 20.04
-Step 1. Log in via SSH and update the system
+
+# Step 1. Log in via SSH and update the system
 Log in to your Ubuntu 20.04 VPS with SSH as a root user:
 
 ssh root@IP_Address -p Port_number
@@ -37,7 +38,7 @@ Codename: focal
 Now, run the following command to update all installed packages to the latest available version.
 
 apt update && sudo apt upgrade
-Step 2: Install Apache Webserver
+# Step 2: Install Apache Webserver
 Execute the following command to install Apache webserver:
 
 apt install apache2
