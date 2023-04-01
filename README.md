@@ -1,4 +1,4 @@
-#### Suitecrm installation for self-hosting
+# Suitecrm installation for self-hosting
  
 ## Introduction
 
