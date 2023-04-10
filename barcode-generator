@@ -3,23 +3,23 @@ A simple guide to add barcodes to PDF templates in SuiteCRM, I would try the fol
 
 * Download the PHP Barcode Generator library from GitHub (GitHub - picqer/php-barcode-generator: Barcode generator in PHP that is easy to use, non-bloated and framework independent. 1).
 
-Extract the downloaded archive and upload the “src” folder to your SuiteCRM instance in the custom directory. For example, you can upload it to custom/php-barcode-generator.
+* Extract the downloaded archive and upload the “src” folder to your SuiteCRM instance in the custom directory. For example, you can upload it to custom/php-barcode-generator.
 
-Create a new PDF template or edit an existing one in SuiteCRM. You can do this by going to the “PDF Templates” section in the admin panel.
+* Create a new PDF template or edit an existing one in SuiteCRM. You can do this by going to the “PDF Templates” section in the admin panel.
 
-In the PDF template editor, add a placeholder where you want to insert the barcode. You can do this by clicking on the “Add Field” button and selecting “Text” from the dropdown menu.
+* In the PDF template editor, add a placeholder where you want to insert the barcode. You can do this by clicking on the “Add Field” button and selecting “Text” from the dropdown menu.
 
-In the “Text” field settings, enter a unique name for the field and select the “Variable” option for the “Type” field.
+* In the “Text” field settings, enter a unique name for the field and select the “Variable” option for the “Type” field.
 
-In the “Variable Name” field, enter a unique name for the variable, such as “barcode”.
+* In the “Variable Name” field, enter a unique name for the variable, such as “barcode”.
 
-Save the PDF template.
+* Save the PDF template.
 
-Open the PHP file that generates the PDF, which is usually located in the custom/modules//views directory.
+*Open the PHP file that generates the PDF, which is usually located in the custom/modules//views directory.
 
-Add the following code to the PHP file to generate the barcode:
+* Add the following code to the PHP file to generate the barcode:
 
-php code
+### php code
 
     // Load the PHP Barcode Generator library
    require_once 'custom/php-barcode-generator/autoload.php';
@@ -33,6 +33,7 @@ php code
    Replace <barcode value> with the value you want to encode in the barcode.
 
 Save the PHP file.
+
 Run a Quick Repair and Rebuild in SuiteCRM to ensure that the new files are recognized.
 After completing these steps, the PDF template should include a barcode image based on the value you specified.
 
