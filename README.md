@@ -57,7 +57,7 @@ To install PHP and the required PHP extensions, run the following command:
 
 MariaDB is available in the Ubuntu 20.04 default OS repository. You can install it by running the following command:
 
-    $ apt install mariadb-server
+     apt install mariadb-server
 By default, the MariaDB service will start automatically after installing it in your system. You can verify it with the following command:
 
      systemctl status mariadb
@@ -99,7 +99,8 @@ Download the latest stable version by executing the following command on your se
     wget https://suitecrm.com/files/147/SuiteCRM-8.0/608/SuiteCRM-8.0.3.zip
 Then create a suitecrm directory unzip it to the  /var/www/html/suitecrm directory.
 
-unzip SuiteCRM-8.0.3.zip -d /var/www/html/suitecrm
+    unzip SuiteCRM-8.0.3.zip -d /var/www/html/suitecrm
+    
 Then run the following command to set the correct permissions:
 
     chown -R www-data:www-data /var/www/html/suitecrm/
